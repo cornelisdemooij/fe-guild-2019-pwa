@@ -81,17 +81,16 @@ window.addEventListener('load', () => {
   }
 });
 
+let deferredPrompt;
+
 window.addEventListener('beforeinstallprompt', event => {
-  // Determine the user's choice - return as a Promise
-  event.userChoice.then(result => {
-    console.log(result.outcome);
+  // Prevent Chrome 67 and earlier from automatically showing the prompt:
+  event.preventDefault();
 
-    // Based on the user's choice, decide how to proceed:
-    if(result.outcome == 'dismissed') {
-      // Send to analytics
-    } else {
-      // Send to analytics
-    }
-  });
-});
+  console.log('beforeinstallprompt fired');
 
+  // Stash the event so it can be triggered later:
+  deferredPrompt = event;
+
+  return false;
+})
