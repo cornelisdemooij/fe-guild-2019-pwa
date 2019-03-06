@@ -66,4 +66,32 @@ window.addEventListener('load', () => {
   const blob = new Blob([stringManifest], {type: 'application/json'});
   const manifestURL = URL.createObjectURL(blob);
   document.querySelector('#manifestPlaceholder').setAttribute('href', manifestURL);
+
+  // Service worker:
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register(`${baseUrl}sw.js`)
+      .then( registration => {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch(err => {
+        // Registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+  }
 });
+
+window.addEventListener('beforeinstallprompt', event => {
+  // Determine the user's choice - return as a Promise
+  event.userChoice.then(result => {
+    console.log(result.outcome);
+
+    // Based on the user's choice, decide how to proceed:
+    if(result.outcome == 'dismissed') {
+      // Send to analytics
+    } else {
+      // Send to analytics
+    }
+  });
+});
+
