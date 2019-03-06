@@ -5,3 +5,9 @@
 .drawer-option {
   padding: 16px;
 }
+
+body {
+  /*-webkit-user-select: none;*/                  /* Uncomment to disable text selection */
+  /*-webkit-tap-highlight-color: transparent;*/   /* Uncomment to disable link highlighting on iOS */
+  /*-webkit-touch-callout: none;*/                /* Uncomment to disable touch callout on iOS */
+}

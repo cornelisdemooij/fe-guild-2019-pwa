@@ -8,9 +8,40 @@
     <title>Progressive Selfies</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_orange.min.css"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-green.min.css"/>
     <link rel="stylesheet" href="src/css/app.css">
     <link rel="stylesheet" href="src/css/feed.css">
+    <!--<link rel="manifest" href="manifest.json">  <- this is for static manifest file -->
+    <base href="/">
+    <link rel="manifest" id="manifestPlaceholder">
+
+    <!-- For Safari/iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWA Selfies">
+    <!-- Safari/iOS custom icons, different sizes for different devices -->
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="src/images/icons/apple-icon-180x180.png" sizes="180x180">
+    <!-- Safari/iOS Custom splash screen -->
+    <link rel="apple-touch-startup-image" href="src/images/apple-launch.png">
+    <!-- Safari/iOS Custom splash screens for different iOS devices -->
+    <link href="src/images/splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="src/images/splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 </head>
 <body>
 
@@ -19,7 +50,7 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title">Progressive Selfies</span>
+                <span class="mdl-layout-title">Selfies, Progressively</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation. We hide it in small screens. -->
@@ -36,7 +67,7 @@
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Progressive Selfies</span>
+            <span class="mdl-layout-title">Selfies, Progressively</span>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="/">Feed</a>
                 <a class="mdl-navigation__link" href="/help">Help</a>
@@ -64,7 +95,7 @@
                     <div>
                         <button
                             class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent"
-                            type="submit" id="post-btn">Post!
+                            type="submit" id="post-btn">Post That Duck!
                         </button>
                     </div>
                     <br>
@@ -83,7 +114,7 @@
                  alt="Ducks everywhere"
                  class="main-image">
             <div class="page-content">
-                <h5 class="text-center mdl-color-text--primary">Share your duck face!</h5>
+                <h5 class="text-center mdl-color-text--primary">Check out my ducks!</h5>
                 <div id="shared-moments"></div>
             </div>
             <div class="floating-button">
